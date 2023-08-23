@@ -20,12 +20,12 @@ const text: React.CSSProperties = {
 	fontWeight: 'bold',
 	fontFamily,
 	fontSize: 40,
-	color: '#4290F5',
+	color: 'red',
 };
 
 const disappearBeforeEnd = 20;
 
-export const Overlay: React.FC = () => {
+export const Overlay: React.FC = ({scale1,top1}) => {
 	const frame = useCurrentFrame();
 	const {fps, durationInFrames} = useVideoConfig();
 
@@ -52,23 +52,24 @@ export const Overlay: React.FC = () => {
 	const container: React.CSSProperties = useMemo(() => {
 		return {
 			position: 'absolute',
-			backgroundColor: 'white',
-			borderRadius: 25,
+			backgroundColor: 'yellow',
+			borderRadius: 250,
 			right: 90,
 			top: 90,
-			scale: String(scale),
+			// scale: String(scale),
 			translate: `0 ${outY}px`,
 			rotate: `${rotate}rad`,
 			padding: 40,
+			border:'5px solid red'
 		};
 	}, [scale, outY, rotate]);
 
-	return (
-		<AbsoluteFill>
-			<div style={container}>
-				<div style={title}>Look</div>
+	return (<>
+	 <AbsoluteFill>
+		<div style={{...container, scale:scale1, top:top1}}>
+				<div style={title}>Look{frame}</div>
 				<div style={text}>I'm an overlay!</div>
 			</div>
-		</AbsoluteFill>
-	);
+		 </AbsoluteFill>
+		</>);
 };
