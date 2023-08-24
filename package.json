@@ -11,14 +11,16 @@
   "repository": {},
   "license": "UNLICENSED",
   "dependencies": {
-    "@remotion/cli": "4.0.22",
-    "@remotion/google-fonts": "4.0.22",
+    "@remotion/cli": "4.0.24",
+    "@remotion/google-fonts": "4.0.24",
+    "@remotion/zod-types": "^4.0.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remotion": "4.0.22"
+    "remotion": "4.0.24",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@remotion/eslint-config": "4.0.22",
+    "@remotion/eslint-config": "4.0.24",
     "@types/react": "^18.0.26",
     "@types/web": "^0.0.86",
     "eslint": "^8.43.0",
